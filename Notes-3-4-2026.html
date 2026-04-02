@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Company | Lowest Price Grocery in Hulimavu</title>
+    <style>
+        :root {
+            --brand-red: #D32F2F;
+            --brand-yellow: #FFEB3B;
+            --text-dark: #333333;
+            --bg-light: #F9F9F9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        /* Header & Navbar */
+        header {
+            background-color: var(--brand-red);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-circle {
+            background-color: var(--brand-yellow);
+            color: var(--brand-red);
+            font-weight: bold;
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-text h1 {
+            font-size: 1.2rem;
+            line-height: 1.1;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: var(--brand-yellow);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to right, var(--brand-red) 50%, var(--brand-yellow) 50%);
+            display: flex;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .hero-content {
+            width: 50%;
+            padding: 5%;
+            color: white;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-offer {
+            width: 50%;
+            padding: 5%;
+            color: var(--brand-red);
+            text-align: center;
+        }
+
+        .hero-offer h2 {
+            font-size: 2.5rem;
+        }
+
+        .hero-offer .price {
+            font-size: 5rem;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .hero-offer p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .small-print {
+            font-size: 0.8rem;
+            font-weight: normal;
+        }
+
+        /* Location Bar */
+        .location-bar {
+            background-color: var(--brand-yellow);
+            color: var(--text-dark);
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Categories Section */
+        .categories {
+            padding: 40px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--brand-red);
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background-color: var(--brand-red);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            background-color: #b71c1c;
+        }
+
+        /* Featured Products (Sample) */
+        .products {
+            padding: 0 5% 40px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .price-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--brand-yellow);
+            color: var(--brand-red);
+            padding: 10px;
+            border-radius: 50%;
+            font-weight: bold;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .price-tag span {
+            font-size: 0.6rem;
+            color: var(--text-dark);
+        }
+
+        .product-image {
+            width: 120px;
+            height: 120px;
+            background-color: #f0f0f0;
+            margin: 0 auto 15px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .add-btn {
+            background-color: var(--brand-red);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .add-btn:hover {
+            background-color: #b71c1c;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 30px 5%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                background: var(--brand-red);
+            }
+            .hero-content, .hero-offer {
+                width: 100%;
+            }
+            .hero-offer {
+                background-color: var(--brand-yellow);
+            }
+            nav ul {
+                display: none; /* Can be replaced with a hamburger menu */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <div class="logo-circle">PC</div>
+            <div class="logo-text">
+                <h1>Price<br>Company</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Lowest Price Grocery</h2>
+            <h3>Now Open at Hulimavu</h3>
+        </div>
+        <div class="hero-offer">
+            <h2>Inaugural Offer</h2>
+            <div class="price">₹100 <span style="font-size: 2rem;">OFF</span></div>
+            <p>above ₹500 Purchase</p>
+            <p class="small-print">*Offer valid once per customer</p>
+        </div>
+    </section>
+
+    <div class="location-bar">
+        📍 No.383/34/5/2, Near Kempamma Temple, Hulimavu Main Road, Bangalore - 560 076
+    </div>
+
+    <section id="categories" class="categories">
+        <h2 class="section-title">Shop By Category</h2>
+        <div class="category-grid">
+            <div class="category-card">Staples</div>
+            <div class="category-card">Oils & Ghee</div>
+            <div class="category-card">Beverages</div>
+            <div class="category-card">Fruits & Vegetables</div>
+            <div class="category-card">FMCG Food</div>
+            <div class="category-card">Personal Care</div>
+        </div>
+    </section>
+
+    <section class="products">
+        <h2 class="section-title">Featured Deals</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="price-tag">₹36 <span>Only</span></div>
+                <div class="product-image">[ Atta Image ]</div>
+                <h3 class="product-title">Atta, 1kg</h3>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="price-tag">₹163 <span>Only</span></div>
+                <div class="product-image">[ Sunpure Oil ]</div>
+                <h3 class="product-title">Sunpure Oil, 1 Litre</h3>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="price-tag">₹25 <span>Per kg</span></div>
+                <div class="product-image">[ Onion Image ]</div>
+                <h3 class="product-title">Fresh Onion</h3>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="price-tag">₹185 <span>Only</span></div>
+                <div class="product-image">[ Dates Image ]</div>
+                <h3 class="product-title">Premium Dates</h3>
+                <button class="add-btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Price Company</h2>
+        <p>No.383/34/5/2, Near Kempamma Temple, Hulimavu Main Road, Bangalore - 560 076</p>
+        <br>
+        <p>&copy; 2026 Price Company. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

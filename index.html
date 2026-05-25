@@ -29,9 +29,9 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Modern Crisp Header */
+        /* Modern Brand-Yellow Header */
         header {
-            background-color: #FFFFFF; /* Changed to clean white */
+            background-color: var(--brand-yellow); /* Rich brand yellow */
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
@@ -39,7 +39,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .logo {
@@ -50,8 +50,8 @@
         }
 
         .logo-circle {
-            background-color: var(--brand-yellow);
-            color: var(--brand-red);
+            background-color: var(--brand-red); /* Red circle on yellow header */
+            color: var(--brand-yellow);
             font-weight: 800;
             font-size: 1.4rem;
             width: 45px;
@@ -68,7 +68,7 @@
             line-height: 1.1;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: var(--brand-red); /* Flipped to red so it pops on white */
+            color: var(--brand-red); /* Clean red text on yellow */
         }
 
         nav ul {
@@ -78,17 +78,17 @@
         }
 
         nav a {
-            color: var(--text-dark); /* Flipped to dark grey for visibility */
+            color: #1A1A1A; /* Dark charcoal text for perfect readability */
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.95rem;
             transition: color 0.2s ease;
         }
 
         nav a:hover {
-            color: var(--brand-red); /* Hovers to red instead of yellow */
+            color: var(--brand-red); /* Smooth transition to red on hover */
         }
-
+        
         /* Premium Brand Hero Section */
         .hero {
             background: linear-gradient(135deg, var(--brand-red) 0%, var(--brand-red-dark) 100%);

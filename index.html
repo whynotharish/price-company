@@ -308,3 +308,164 @@
         footer h2 {
             color: var(--brand-yellow);
             margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        footer a {
+            color: var(--brand-yellow);
+            text-decoration: underline;
+            margin: 0 15px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: #FFFFFF;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            /* Header */
+            nav ul {
+                display: none;
+            }
+            
+            /* Hero Section Mobile Fixes */
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 5%;
+            }
+            .hero-content {
+                width: 100%;
+                padding: 0;
+                margin-bottom: 30px;
+            }
+            .hero-content h2 {
+                font-size: 2.2rem;
+                line-height: 1.2;
+            }
+            .hero-content h3 {
+                font-size: 1.4rem;
+                margin-bottom: 12px;
+            }
+            .hero-content h4 {
+                font-size: 0.95rem;
+                padding: 8px 15px;
+                line-height: 1.4;
+            }
+            
+            /* Yellow Price Box Mobile Fixes */
+            .hero-offer {
+                width: 100%;
+                padding: 0;
+            }
+            .hero-offer .price-box {
+                padding: 25px 15px;
+                width: 100%;
+                max-width: 340px;
+                margin: 0 auto;
+            }
+            .hero-offer h2 {
+                font-size: 1.2rem;
+            }
+            .hero-offer .price {
+                font-size: 2.8rem;
+            }
+            .hero-offer p {
+                font-size: 1rem;
+            }
+            
+            /* General Mobile Tweaks */
+            .location-bar {
+                font-size: 0.9rem;
+                padding: 12px 5%;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <div class="logo-circle">PC</div>
+            <div class="logo-text">
+                <h1>Price<br>Company</h1>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#stores">Locations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Lowest Price Grocery</h2>
+            <h3>Now Open in Hulimavu & Hongasandra</h3>
+            <h4>Expanding soon to bring wholesale savings to more neighborhoods</h4>
+        </div>
+        <div class="hero-offer">
+            <div class="price-box">
+                <h2>Everyday Low Prices</h2>
+                <div class="price">Wholesale</div>
+                <p>Rates on Retail Quantities</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="location-bar">
+        📍 Store Locations: Hulimavu | Hongasandra | <em style="font-weight: normal; color: var(--text-muted);">More opening soon!</em>
+    </div>
+
+    <section id="categories" class="categories">
+        <h2 class="section-title">Shop By Category</h2>
+        <div class="category-grid">
+            <div class="category-card">Staples</div>
+            <div class="category-card">Oils & Ghee</div>
+            <div class="category-card">Beverages</div>
+            <div class="category-card">Fruits & Vegetables</div>
+            <div class="category-card">FMCG Food</div>
+            <div class="category-card">Personal Care</div>
+        </div>
+    </section>
+
+    <section id="stores" class="store-gallery">
+        <h2 class="section-title">Visit Our Stores</h2>
+        <div class="store-grid">
+            <div class="store-card">
+                <img src="pc_hulimavu.jpeg" alt="Price Company Hulimavu Store">
+                <h3 style="color: var(--brand-red);">Hulimavu Branch</h3>
+                <p>383/34/5/2, Khatha No.5/2, CMC khatha.1064, Kempamma Layout, Hulimavu, Bengaluru, Karnataka 560076</p>
+                <a href="https://maps.app.goo.gl/M2JanmZ3wVssE6t4A" target="_blank" class="maps-btn">📍 Open in Maps</a>
+            </div>
+            <div class="store-card">
+                <img src="pc_hongasandra.jpeg" alt="Price Company Hongasandra Store">
+                <h3 style="color: var(--brand-red);">Hongasandra Branch</h3>
+                <p>3, Begur Rd, Bommanahalli, Bengaluru, Karnataka 560114</p>
+                <a href="https://maps.app.goo.gl/X1Hedf9jGMEzW17K9" target="_blank" class="maps-btn">📍 Open in Maps</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Price Company</h2>
+        <p style="color: #999; margin-bottom: 20px;">Visit us at our Hulimavu & Hongasandra locations!</p>
+        
+        <p>
+            <a href="privacy">Privacy Policy</a> | 
+            <a href="terms">Terms of Use</a>
+        </p>
+        <br>
+        <p style="color: #666; font-size: 0.85rem;">&copy; 2026 Clickfix Cash and Carry Private Limited. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

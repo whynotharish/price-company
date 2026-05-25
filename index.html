@@ -305,22 +305,66 @@
             text-decoration: underline;
         }
 
-        /* Responsive Design */
+/* Responsive Design */
         @media (max-width: 768px) {
+            /* Header */
+            nav ul {
+                display: none;
+            }
+            
+            /* Hero Section Mobile Fixes */
             .hero {
                 flex-direction: column;
                 text-align: center;
-                padding: 40px 0;
+                padding: 40px 5%;
             }
-            .hero-content, .hero-offer {
+            .hero-content {
                 width: 100%;
-                padding: 5% 10%;
+                padding: 0;
+                margin-bottom: 30px;
             }
             .hero-content h2 {
-                font-size: 2.5rem;
+                font-size: 2.2rem; /* Scaled down for mobile */
+                line-height: 1.2;
             }
-            nav ul {
-                display: none;
+            .hero-content h3 {
+                font-size: 1.4rem;
+                margin-bottom: 12px;
+            }
+            .hero-content h4 {
+                font-size: 0.95rem; /* Better pill-shape text size */
+                padding: 8px 15px;
+                line-height: 1.4;
+            }
+            
+            /* Yellow Price Box Mobile Fixes */
+            .hero-offer {
+                width: 100%;
+                padding: 0;
+            }
+            .hero-offer .price-box {
+                padding: 25px 15px;
+                width: 100%;
+                max-width: 340px;
+                margin: 0 auto;
+            }
+            .hero-offer h2 {
+                font-size: 1.2rem;
+            }
+            .hero-offer .price {
+                font-size: 2.8rem;
+            }
+            .hero-offer p {
+                font-size: 1rem;
+            }
+            
+            /* General Mobile Tweaks */
+            .location-bar {
+                font-size: 0.9rem;
+                padding: 12px 5%;
+            }
+            .section-title {
+                font-size: 1.5rem;
             }
         }
     </style>

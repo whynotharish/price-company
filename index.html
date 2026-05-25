@@ -124,20 +124,15 @@
         }
 
         .hero-offer .price {
-            font-size: 5rem;
+            font-size: 3.5rem;
             font-weight: bold;
-            line-height: 1;
+            line-height: 1.2;
+            margin: 10px 0;
         }
 
         .hero-offer p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: bold;
-            margin-top: 10px;
-        }
-
-        .small-print {
-            font-size: 0.8rem;
-            font-weight: normal;
         }
 
         /* Location Bar */
@@ -186,7 +181,7 @@
             background-color: #b71c1c;
         }
 
-        /* Featured Products (Sample) */
+        /* Featured Products */
         .products {
             padding: 0 5% 40px;
         }
@@ -245,20 +240,36 @@
             font-size: 1.1rem;
             margin-bottom: 10px;
         }
-
-        .add-btn {
-            background-color: var(--brand-red);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            width: 100%;
+        
+        /* Store Gallery */
+        .store-gallery {
+            padding: 0 5% 40px;
         }
 
-        .add-btn:hover {
-            background-color: #b71c1c;
+        .store-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .store-card {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 15px;
+        }
+        
+        .store-image-placeholder {
+            width: 100%;
+            aspect-ratio: 2.229;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-style: italic;
         }
 
         /* Footer */
@@ -282,7 +293,7 @@
                 background-color: var(--brand-yellow);
             }
             nav ul {
-                display: none; /* Can be replaced with a hamburger menu */
+                display: none;
             }
         }
     </style>
@@ -300,7 +311,6 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#categories">Categories</a></li>
-                <li><a href="#offers">Offers</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -313,10 +323,9 @@
             <h4>(More locations opening soon!)</h4>
         </div>
         <div class="hero-offer">
-            <h2>Inaugural Offer</h2>
-            <div class="price">₹100 <span style="font-size: 2rem;">OFF</span></div>
-            <p>above ₹500 Purchase</p>
-            <p class="small-print">*Offer valid once per customer</p>
+            <h2>Everyday Low Prices</h2>
+            <div class="price">Wholesale</div>
+            <p>Rates on Retail Quantities</p>
         </div>
     </section>
 
@@ -336,7 +345,7 @@
         </div>
     </section>
 
-<section class="products">
+    <section class="products">
         <h2 class="section-title">Featured Deals</h2>
         <div class="product-grid">
             <div class="product-card">
@@ -366,6 +375,22 @@
                     <img src="premiumdatespc.png" alt="Premium Dates" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                 </div>
                 <h3 class="product-title">Premium Dates</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="store-gallery">
+        <h2 class="section-title">Visit Our Stores</h2>
+        <div class="store-grid">
+            <div class="store-card">
+                <div class="store-image-placeholder">[ Hulimavu Store Image ]</div>
+                <h3 style="margin-top: 15px; color: var(--brand-red);">Hulimavu Branch</h3>
+                <p style="font-size: 0.9rem; color: #666; padding: 0 10px; margin-top: 5px;">No.383/34/5/2, Near Kempamma Temple, Hulimavu Main Road</p>
+            </div>
+            <div class="store-card">
+                <div class="store-image-placeholder">[ Hongasandra Store Image ]</div>
+                <h3 style="margin-top: 15px; color: var(--brand-red);">Hongasandra Branch</h3>
+                <p style="font-size: 0.9rem; color: #666; padding: 0 10px; margin-top: 5px;">Hongasandra Main Road</p>
             </div>
         </div>
     </section>

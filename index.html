@@ -55,7 +55,6 @@
             text-decoration: none;
         }
 
-        /* 3D Embossed English Text */
         .logo-text.english {
             font-family: 'Fredoka', 'Arial Rounded MT Bold', sans-serif;
             font-weight: 700;
@@ -67,18 +66,16 @@
             text-shadow: 2px 2px 0px rgba(0,0,0,0.15), -1px -1px 0px rgba(255,255,255,0.2);
         }
 
-        /* 3D Embossed Kannada Text */
         .logo-text.kannada {
             font-family: 'Noto Sans Kannada', sans-serif;
             font-weight: 700;
             font-size: 1.4rem;
-            line-height: 1.25; /* Increased slightly to match English word gap */
+            line-height: 1.25;
             color: var(--brand-yellow);
             text-shadow: 2px 2px 0px rgba(0,0,0,0.15), -1px -1px 0px rgba(255,255,255,0.2);
-            transform: translateY(3px); /* Nudges the text down to optically align */
+            transform: translateY(3px);
         }
 
-        /* White-bordered Center Circle */
         .logo-circle {
             background-color: var(--brand-yellow);
             color: var(--brand-red);
@@ -95,7 +92,6 @@
             box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
         }
 
-        /* Navigation Links (White on Red) */
         nav ul {
             list-style: none;
             display: flex;
@@ -321,6 +317,51 @@
             background-color: var(--brand-red-dark);
         }
 
+        /* --------------------------------------
+           COMPANY DETAILS SECTION
+           -------------------------------------- */
+        .company-details {
+            background-color: var(--bg-surface);
+            padding: 60px 5%;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .detail-block h3 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .detail-block p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            line-height: 1.6;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .detail-block strong {
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .detail-icon {
+            flex-shrink: 0;
+            margin-top: 2px;
+            color: var(--text-dark);
+        }
+
         footer {
             background-color: #111111;
             color: #FFFFFF;
@@ -353,7 +394,7 @@
                 gap: 8px;
             }
             .logo-text.english, .logo-text.kannada {
-                font-size: 1rem; /* Scale down fonts so the 3 parts fit on mobile */
+                font-size: 1rem; 
             }
             .logo-circle {
                 width: 45px;
@@ -418,6 +459,9 @@
             }
             .section-title {
                 font-size: 1.5rem;
+            }
+            .company-details {
+                padding: 40px 5%;
             }
         }
     </style>
@@ -491,6 +535,40 @@
                 <h3 style="color: var(--brand-red);">Hongasandra Branch</h3>
                 <p>3, Begur Rd, Bommanahalli, Bengaluru, Karnataka 560114</p>
                 <a href="https://maps.app.goo.gl/X1Hedf9jGMEzW17K9" target="_blank" class="maps-btn">📍 Open in Maps</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="company-details">
+        <div class="details-grid">
+            <div class="detail-block">
+                <h3>Customer Support</h3>
+                <p>
+                    <svg class="detail-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    Support@pricecompany.com
+                </p>
+                <p>
+                    <svg class="detail-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    +91 7022627291
+                </p>
+                <p style="margin-top: 15px;">We're here to help with any questions or concerns</p>
+            </div>
+
+            <div class="detail-block">
+                <h3>Grievance Redressal</h3>
+                <p><strong style="font-size: 1.05rem;">Mr. Venkatraman Shekaripuram Ganesh</strong></p>
+                <p>
+                    <svg class="detail-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    Grievance@pricecompany.com
+                </p>
+                <p>Mon - Sat (10:00 AM - 07:00 PM)</p>
+            </div>
+
+            <div class="detail-block">
+                <h3>Registered Address</h3>
+                <p><strong style="font-size: 1.05rem;">Clickfix Cash and Carry Private Limited</strong></p>
+                <p>TWA - SJR - The Hub, 1st Floor of South Wing,<br>Survey Number 8, 2 & 9, Sarjapur Main Road,<br>Sarjapur - Marathahalli Road, Bellandur<br>Bengaluru, Karnataka - 560102</p>
+                <p><strong>CIN:</strong> U51909KA2023PTC170150</p>
             </div>
         </div>
     </section>

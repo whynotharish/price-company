@@ -4,32 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Use | Price Company</title>
-    <link rel="icon" type="image/png" href="pc-logo-round.png">
+    <link rel="icon" type="image/png" href="pc_logo_1.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@700&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --brand-red: #D32F2F;
             --brand-yellow: #FFEB3B;
-            --text-dark: #333333;
-            --bg-light: #F9F9F9;
+            --bg-light: #F4F6F8;
+            --text-dark: #1A1A1A;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
             background-color: var(--bg-light);
             color: var(--text-dark);
-            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        /* Header & Navbar */
+        /* Standardized Header (Matches Homepage) */
         header {
-            background-color: var(--brand-red);
-            color: white;
+            background-color: var(--brand-red); 
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
@@ -37,70 +43,96 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
-        .logo {
+        .logo-sign {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none;
-            color: white;
+        }
+
+        .logo-text.english {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            line-height: 1;
+            color: var(--brand-yellow);
+            text-transform: uppercase;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.15), -1px -1px 0px rgba(255,255,255,0.2);
+        }
+
+        .logo-text.kannada {
+            font-family: 'Noto Sans Kannada', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            line-height: 1.25;
+            color: var(--brand-yellow);
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.15), -1px -1px 0px rgba(255,255,255,0.2);
+            transform: translateY(3px);
         }
 
         .logo-circle {
             background-color: var(--brand-yellow);
             color: var(--brand-red);
-            font-weight: bold;
-            font-size: 1.5rem;
-            width: 50px;
-            height: 50px;
+            border: 3px solid #FFFFFF;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        .logo-text h1 {
-            font-size: 1.2rem;
-            line-height: 1.1;
-            text-transform: uppercase;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
 
         nav a {
-            color: white;
+            color: #FFFFFF; 
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
         }
 
         nav a:hover {
-            color: var(--brand-yellow);
+            color: var(--brand-yellow); 
         }
 
-        /* Legal Content Container */
+        /* Legal Content Box */
         .legal-container {
-            max-width: 900px;
-            margin: 40px auto;
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            flex: 1;
+            padding: 60px 5%;
+            display: flex;
+            justify-content: center;
         }
 
-        .legal-container h1 {
+        .legal-content {
+            background: #FFFFFF;
+            width: 100%;
+            max-width: 900px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .legal-content h1 {
             color: var(--brand-red);
             text-align: center;
             margin-bottom: 30px;
+            font-size: 2rem;
             text-transform: uppercase;
         }
 
-        .legal-container h2 {
+        .legal-content h2 {
             color: var(--brand-red);
             margin-top: 30px;
             margin-bottom: 15px;
@@ -110,111 +142,138 @@
             display: inline-block;
         }
 
-        .legal-container p {
+        .legal-content p {
             margin-bottom: 15px;
+            line-height: 1.6;
+            color: #444;
         }
 
-        .legal-container ul {
+        .legal-content ul {
             margin-left: 20px;
             margin-bottom: 15px;
+            line-height: 1.6;
+            color: #444;
         }
 
-        .legal-container li {
+        .legal-content li {
             margin-bottom: 8px;
         }
 
-        /* Footer */
+        /* Standardized Footer (Matches Homepage) */
         footer {
-            background-color: var(--text-dark);
-            color: white;
+            background-color: #111111;
+            color: #FFFFFF;
             text-align: center;
-            padding: 30px 5%;
-            margin-top: 40px;
+            padding: 40px 5%;
+            margin-top: auto;
+        }
+        
+        footer h2 {
+            color: var(--brand-yellow);
+            margin-bottom: 10px;
+            font-weight: 700;
         }
         
         footer a {
             color: var(--brand-yellow);
-            text-decoration: none;
-            margin: 0 10px;
+            text-decoration: underline;
+            margin: 0 15px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.2s;
         }
 
         footer a:hover {
-            text-decoration: underline;
+            color: #FFFFFF;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 900px) {
+            .logo-sign { gap: 8px; }
+            .logo-text.english, .logo-text.kannada { font-size: 1rem; }
+            .logo-circle { width: 45px; height: 45px; font-size: 1.2rem; border-width: 2px; }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .legal-container { padding: 30px 5%; }
+            .legal-content { padding: 25px; }
+            .legal-content h1 { font-size: 1.6rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="logo">
+        <a href="/" class="logo-sign">
+            <div class="logo-text english">PRICE<br>COMPANY</div>
             <div class="logo-circle">PC</div>
-            <div class="logo-text">
-                <h1>Price<br>Company</h1>
-            </div>
+            <div class="logo-text kannada">ಪ್ರೈಸ್<br>ಕಂಪನಿ</div>
         </a>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="legal-container">
-        <h1>Terms of Use</h1>
-        
-        <p>Welcome to pricecompany.store (the "Website"). These Terms of Use ("Terms") govern your access to and use of the Website, operated by Clickfix Cash and Carry Private Limited ("Clickfix", "we", "us", or "our"), doing business under the brand name Price Company.</p>
-        <p>By accessing or using this Website, you agree to be bound by these Terms and our Privacy Policy. If you do not agree with any part of these Terms, you must not use our Website.</p>
+    <main class="legal-container">
+        <div class="legal-content">
+            <h1>Terms of Use</h1>
+            
+            <p>Welcome to pricecompany.store (the "Website"). These Terms of Use ("Terms") govern your access to and use of the Website, operated by Clickfix Cash and Carry Private Limited ("Clickfix", "we", "us", or "our"), doing business under the brand name Price Company.</p>
+            <p>By accessing or using this Website, you agree to be bound by these Terms and our Privacy Policy. If you do not agree with any part of these Terms, you must not use our Website.</p>
 
-        <h2>1. Website Purpose and Informational Nature</h2>
-        <p>The Price Company Website is designed and operated strictly as an informational and promotional platform. <strong>No e-commerce sales, transactions, or binding agreements are conducted through this Website.</strong> All actual sales, transactions, and fulfillment of grocery and wholesale items are conducted exclusively at our physical retail store(s) located in Bengaluru.</p>
-        
-        <h2>2. Pricing and Product Availability Disclaimer</h2>
-        <p>Please note that any product images, categories, deals, offers, or prices displayed on this Website are for illustrative, promotional, and informational purposes only. <strong>The prices shown on the Website may not reflect real-time pricing and do not constitute a legally binding offer.</strong></p>
-        <p>Actual pricing, product availability, and stock levels are subject to change without notice and will be exclusively determined at the point of sale inside our physical store. Clickfix is not liable for any discrepancies between the prices listed on this Website and the prices charged at the physical store.</p>
+            <h2>1. Website Purpose and Informational Nature</h2>
+            <p>The Price Company Website is designed and operated strictly as an informational and promotional platform. <strong>No e-commerce sales, transactions, or binding agreements are conducted through this Website.</strong> All actual sales, transactions, and fulfillment of grocery and wholesale items are conducted exclusively at our physical retail store(s) located in Bengaluru.</p>
+            
+            <h2>2. Pricing and Product Availability Disclaimer</h2>
+            <p>Please note that any product images, categories, deals, offers, or prices displayed on this Website are for illustrative, promotional, and informational purposes only. <strong>The prices shown on the Website may not reflect real-time pricing and do not constitute a legally binding offer.</strong></p>
+            <p>Actual pricing, product availability, and stock levels are subject to change without notice and will be exclusively determined at the point of sale inside our physical store. Clickfix is not liable for any discrepancies between the prices listed on this Website and the prices charged at the physical store.</p>
 
-        <h2>3. Eligibility and Registration</h2>
-        <p>Access to the Website is open to the general public. If we offer any registration, newsletter, or update functionalities on the Website, you must provide accurate, current, and complete information. You are responsible for safeguarding any passwords or credentials you may use to access specific features of the Website.</p>
+            <h2>3. Eligibility and Registration</h2>
+            <p>Access to the Website is open to the general public. If we offer any registration, newsletter, or update functionalities on the Website, you must provide accurate, current, and complete information. You are responsible for safeguarding any passwords or credentials you may use to access specific features of the Website.</p>
 
-        <h2>4. Returns and Refunds</h2>
-        <p>We pride ourselves on the quality of our products. Because all sales occur at our physical store, our return policy applies exclusively to in-store purchases. If you are unsatisfied with any product purchased from Price Company, we offer a <strong>full return and refund</strong>. To initiate a return, please bring the item(s) and your original receipt back to our physical store, and our staff will process your refund.</p>
+            <h2>4. Returns and Refunds</h2>
+            <p>We pride ourselves on the quality of our products. Because all sales occur at our physical store, our return policy applies exclusively to in-store purchases. If you are unsatisfied with any product purchased from Price Company, we offer a <strong>full return and refund</strong>. To initiate a return, please bring the item(s) and your original receipt back to our physical store, and our staff will process your refund.</p>
 
-        <h2>5. User Conduct</h2>
-        <p>By using this Website, you agree not to:</p>
-        <ul>
-            <li>Use the Website for any unlawful, fraudulent, or malicious purposes.</li>
-            <li>Attempt to gain unauthorized access to any portion or feature of the Website, or any other systems or networks connected to the Website.</li>
-            <li>Interfere with or disrupt the operation of the Website or the servers or networks that host the Website.</li>
-            <li>Reproduce, duplicate, copy, sell, or resell any part of the Website, including our logos, branding, or proprietary content, without our express written permission.</li>
-        </ul>
+            <h2>5. User Conduct</h2>
+            <p>By using this Website, you agree not to:</p>
+            <ul>
+                <li>Use the Website for any unlawful, fraudulent, or malicious purposes.</li>
+                <li>Attempt to gain unauthorized access to any portion or feature of the Website, or any other systems or networks connected to the Website.</li>
+                <li>Interfere with or disrupt the operation of the Website or the servers or networks that host the Website.</li>
+                <li>Reproduce, duplicate, copy, sell, or resell any part of the Website, including our logos, branding, or proprietary content, without our express written permission.</li>
+            </ul>
 
-        <h2>6. Intellectual Property</h2>
-        <p>All content, branding, logos, graphics, text, and design elements on this Website are the property of Clickfix Cash and Carry Private Limited and are protected by applicable intellectual property laws. You may not use any of our intellectual property without prior written consent.</p>
+            <h2>6. Intellectual Property</h2>
+            <p>All content, branding, logos, graphics, text, and design elements on this Website are the property of Clickfix Cash and Carry Private Limited and are protected by applicable intellectual property laws. You may not use any of our intellectual property without prior written consent.</p>
 
-        <h2>7. Limitation of Liability</h2>
-        <p>To the fullest extent permitted by applicable law, Clickfix Cash and Carry Private Limited shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of your access to, use of, or inability to use the Website, or any errors or omissions in the content thereof. The Website and all information contained herein are provided on an "as is" and "as available" basis without any warranties of any kind.</p>
+            <h2>7. Limitation of Liability</h2>
+            <p>To the fullest extent permitted by applicable law, Clickfix Cash and Carry Private Limited shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of your access to, use of, or inability to use the Website, or any errors or omissions in the content thereof. The Website and all information contained herein are provided on an "as is" and "as available" basis without any warranties of any kind.</p>
 
-        <h2>8. Governing Law and Jurisdiction</h2>
-        <p>These Terms and your use of the Website shall be governed by and construed in accordance with the laws of India. Any disputes, claims, or legal proceedings arising out of or relating to these Terms, the Website, or our physical store operations shall be subject to the exclusive jurisdiction of the competent courts located in <strong>Bengaluru, Karnataka</strong>.</p>
+            <h2>8. Governing Law and Jurisdiction</h2>
+            <p>These Terms and your use of the Website shall be governed by and construed in accordance with the laws of India. Any disputes, claims, or legal proceedings arising out of or relating to these Terms, the Website, or our physical store operations shall be subject to the exclusive jurisdiction of the competent courts located in <strong>Bengaluru, Karnataka</strong>.</p>
 
-        <h2>9. Contact Information</h2>
-        <p>If you have any questions, concerns, or feedback regarding these Terms, please contact us at:</p>
-        <ul>
-            <li><strong>Customer Support:</strong> Support@pricecompany.com</li>
-            <li><strong>Grievances:</strong> Grievance@pricecompany.com</li>
-        </ul>
-        <p><strong>Physical Store Address:</strong> No.383/34/5/2, Near Kempamma Temple, Hulimavu Main Road, Bangalore - 560 076</p>
-    </div>
+            <h2>9. Contact Information</h2>
+            <p>If you have any questions, concerns, or feedback regarding these Terms, please contact us at:</p>
+            <ul>
+                <li><strong>Customer Support:</strong> Support@pricecompany.com</li>
+                <li><strong>Grievances:</strong> Grievance@pricecompany.com</li>
+            </ul>
+            <p><strong>Physical Store Address:</strong> No.383/34/5/2, Near Kempamma Temple, Hulimavu Main Road, Bangalore - 560 076</p>
+        </div>
+    </main>
 
-    <footer>
+    <footer id="contact">
         <h2>Price Company</h2>
-        <p>No.383/34/5/2, Near Kempamma Temple, Hulimavu Main Road, Bangalore - 560 076</p>
-        <br>
-        <p style="font-size: 0.9rem;">
-            <a href="privacy.html">Privacy Policy</a> | 
-            <a href="terms.html">Terms of Use</a>
+        <p style="color: #999; margin-bottom: 20px;">Visit us at our Hulimavu & Hongasandra locations!</p>
+        <p>
+            <a href="privacy">Privacy Policy</a> | 
+            <a href="terms">Terms of Use</a>
         </p>
         <br>
-        <p>&copy; 2026 Price Company. All Rights Reserved.</p>
+        <p style="color: #666; font-size: 0.85rem;">© 2026 Clickfix Cash and Carry Private Limited. All Rights Reserved.</p>
     </footer>
 
 </body>

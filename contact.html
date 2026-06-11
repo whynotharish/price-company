@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Price Company</title>
+    <link rel="icon" type="image/png" href="pc_logo_1.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-red: #D32F2F;
+            --brand-red-dark: #B71C1C;
+            --brand-yellow: #FFEB3B;
+            --bg-light: #F4F6F8;
+            --bg-surface: #FFFFFF;
+            --text-dark: #1A1A1A;
+            --text-muted: #444444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Standardized Header */
+        header {
+            background-color: var(--brand-red); 
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .logo-sign {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-text.english {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            line-height: 1;
+            color: var(--brand-yellow);
+            text-transform: uppercase;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.15), -1px -1px 0px rgba(255,255,255,0.2);
+        }
+
+        .logo-text.kannada {
+            font-family: 'Noto Sans Kannada', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            line-height: 1.25;
+            color: var(--brand-yellow);
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.15), -1px -1px 0px rgba(255,255,255,0.2);
+            transform: translateY(3px);
+        }
+
+        .logo-circle {
+            background-color: var(--brand-yellow);
+            color: var(--brand-red);
+            border: 3px solid #FFFFFF;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #FFFFFF; 
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--brand-yellow); 
+        }
+
+        /* --------------------------------------
+           CONTACT PAGE LAYOUT
+           -------------------------------------- */
+        .contact-container {
+            flex: 1;
+            padding: 60px 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .contact-header {
+            margin-bottom: 40px;
+        }
+
+        .contact-header h1 {
+            font-size: 2.5rem;
+            color: #1A1A1A;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .contact-header p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .support-card {
+            background: var(--bg-surface);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .support-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: #1A1A1A;
+        }
+
+        .support-card p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        /* Action Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background-color: #C8322B; /* Matching the red button style */
+            color: #FFFFFF;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--brand-red-dark);
+        }
+
+        .btn-secondary {
+            background-color: #FFFFFF;
+            color: #C8322B;
+            border: 1px solid rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .btn-secondary:hover {
+            border-color: #C8322B;
+            background-color: #FFF9F9;
+        }
+
+        /* Helper Banner */
+        .helper-banner {
+            background-color: #FDF2F2; /* Very light pink/red background */
+            border: 1px solid #F7DEDE;
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin-top: 20px;
+        }
+
+        .helper-banner h3 {
+            color: #B71C1C;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .helper-banner p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Standardized Footer */
+        footer {
+            background-color: #111111;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 40px 5%;
+            margin-top: auto;
+        }
+        
+        footer h2 {
+            color: var(--brand-yellow);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        footer a {
+            color: var(--brand-yellow);
+            text-decoration: underline;
+            margin: 0 15px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: #FFFFFF;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .logo-sign { gap: 8px; }
+            .logo-text.english, .logo-text.kannada { font-size: 1rem; }
+            .logo-circle { width: 45px; height: 45px; font-size: 1.2rem; border-width: 2px; }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .contact-cards { grid-template-columns: 1fr; }
+            .contact-header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-sign">
+            <div class="logo-text english">PRICE<br>COMPANY</div>
+            <div class="logo-circle">PC</div>
+            <div class="logo-text kannada">ಪ್ರೈಸ್<br>ಕಂಪನಿ</div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        
+        <div class="contact-header">
+            <h1>How can we help?</h1>
+            <p>Reach Price Company support for store inquiries, product availability, bulk ordering, and general questions about buying at our locations.</p>
+        </div>
+
+        <div class="contact-cards">
+            <div class="support-card">
+                <h2>Call customer care</h2>
+                <p>Speak with our support team for urgent assistance with store hours, availability, or immediate account help.</p>
+                <a href="tel:+917022627291" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    +91 7022627291
+                </a>
+            </div>
+
+            <div class="support-card">
+                <h2>Email support</h2>
+                <p>For feedback, inquiries, or business partnerships, please email us with your details so our team can assist you.</p>
+                <a href="mailto:Support@pricecompany.com" class="btn btn-secondary">
+                    Support@pricecompany.com
+                </a>
+            </div>
+        </div>
+
+        <div class="helper-banner">
+            <h3>Need help with a recent in-store purchase?</h3>
+            <p>Please share your receipt number, registered phone number, and a short description of the issue when you email us.</p>
+        </div>
+
+    </main>
+
+    <footer id="contact">
+        <h2>Price Company</h2>
+        <p style="color: #999; margin-bottom: 20px;">Visit us at our Hulimavu & Hongasandra locations!</p>
+        <p>
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Use</a> |
+            <a href="contact.html">Contact Us</a>
+        </p>
+        <br>
+        <p style="color: #666; font-size: 0.85rem;">© 2026 Clickfix Cash and Carry Private Limited. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
